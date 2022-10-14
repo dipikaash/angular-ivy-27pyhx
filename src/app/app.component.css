@@ -1,0 +1,12 @@
+p {
+  font-family: Lato;
+}
+.left-align {
+  float: right;
+}
+.surround {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}

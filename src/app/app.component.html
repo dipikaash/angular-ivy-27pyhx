@@ -1,0 +1,30 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="fg">
+  <div>
+    <label for="title">Add Title</label
+    ><input formControlName="title" type="text" />
+  </div>
+  <div>
+    <label for="amount">Add Amount</label
+    ><input formControlName="amount" type="number" />
+  </div>
+  <div>
+    <label for="date">Add Date</label
+    ><input formControlName="date" type="date" />
+  </div>
+  <button [disabled]="!this.fg.valid">Submit</button> 
+</form>
+<select id="year" [(ngModel)]="year" (change)="OnYearChange()">
+  Year
+  <option [value]="2019">2019</option>
+  <option [value]="2020">2020</option>
+  <option [value]="2021">2021</option>
+  <option [value]="2022">2022</option>
+</select>
+<div *ngFor="let expense of filteredExpenses">
+  <div class="surround">
+    {{ expense.title }} {{ expense.date | date }}
+    <button (click)="onDelete(expense.id)" class="left-align">Delete</button>
+  </div>
+</div>
